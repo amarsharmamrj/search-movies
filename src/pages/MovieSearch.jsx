@@ -1,13 +1,14 @@
 import { useState } from "react"
-import Movies from "../Movies/Movies"
-import Navbar from "../Navbar/Navbar"
+import Navbar from "../components/Navbar/Navbar"
+import Movies from "../components/Movies/Movies"
 
-const SearchMovie = () => {
+const MovieSearch = () => {
     const [searchKey, setSearchKey] = useState('')
     const [darkTheme, setDarkTheme] = useState(false)
 
     return (
         <div className="searchMovie">
+ 
             {/* navbar */}
             <Navbar
                 setSearchKey={setSearchKey}
@@ -24,4 +25,4 @@ const SearchMovie = () => {
     )
 }
 
-export default SearchMovie
+export default MovieSearch

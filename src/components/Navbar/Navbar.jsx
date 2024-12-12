@@ -30,6 +30,7 @@ const Navbar = ({ setSearchKey, darkTheme, setDarkTheme }) => {
 
     return (
         <div className={`${styles.navbar} ${darkTheme ? styles.dark : styles.light}`}>
+
             {/* app title */}
             <div className={styles.appTitle}>
                 <p>Movies</p>
@@ -45,8 +46,13 @@ const Navbar = ({ setSearchKey, darkTheme, setDarkTheme }) => {
             </div>
 
             {/* theme button */}
-            <div className={styles.themeButton}>
-                <button onClick={handleTheme}>{darkTheme ? 'Dark' : 'Light'} Mode</button>
+            <div className={`${styles.themeButton} ${darkTheme ? styles.dark : styles.light}`}>
+                <button
+                    type="button"
+                    onClick={handleTheme}>{darkTheme ? 'Light ' : 'Dark '}
+                    Mode
+                </button>
+                <div className={`${styles.animate} ${darkTheme ? styles.dark : styles.light}`}></div>
             </div>
 
         </div>

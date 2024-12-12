@@ -38,14 +38,83 @@
     border: 0px solid white;
     cursor: pointer;
     color: #054879;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.themeButton button:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+.themeButton {
+    position: relative;
 }
 
+.themeButton.dark button {
+    color: #054879;
+    background-color: transparent;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+}
+
+.animate.dark {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    border-radius: 0.4rem;
+    background-color: white;
+    animation-name: darkAnimation;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; 
+}
+
+@keyframes darkAnimation {
+    from {
+        width: 0px;
+        height: 0px;
+    }
+
+    to {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.animate.light {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    border-radius: 0.4rem;
+    background-color: black;
+    animation-name: lightAnimation;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode:forwards; 
+}
+
+@keyframes lightAnimation {
+    from {
+        width: 0px;
+        height: 0px;
+    }
+
+    to {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.themeButton.light button {
+    color: white;
+    background-color: transparent;
+}
+
+.themeButton.light button:hover {
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
 
 /* mobile devices */
 
