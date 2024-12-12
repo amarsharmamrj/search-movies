@@ -17,7 +17,7 @@ const Movies = ({ searchKey, darkTheme }) => {
     // get list of movies from api
     const getMoviesData = () => {
         setIsLoading(true)
-        const url = `https://www.omdbapi.com/?apikey=b6e23bc&s=${searchKey}&page=${page}`
+        const url = `https://www.omdbapi.com/?apikey=b6e23bc0&s=${searchKey}&page=${page}`
         fetch(url)
             .then((res) => res.json())
             .then((data) => {
